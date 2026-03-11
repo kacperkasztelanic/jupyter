@@ -6,18 +6,39 @@ A quick-reference guide covering everything you need to get productive with Jupy
 
 ## Table of Contents
 
-1. [What is Jupyter?](#what-is-jupyter)
-2. [Key Concepts](#key-concepts)
-3. [JupyterLab vs Jupyter Notebook vs VS Code](#jupyterlab-vs-jupyter-notebook-vs-vs-code)
-4. [Cells](#cells)
-5. [Essential Keyboard Shortcuts](#essential-keyboard-shortcuts)
-6. [Running Code](#running-code)
-7. [Markdown in Notebooks](#markdown-in-notebooks)
-8. [Working with Output](#working-with-output)
-9. [Magic Commands](#magic-commands)
-10. [Shell Commands](#shell-commands)
-11. [Common Pitfalls](#common-pitfalls)
-12. [Tips & Best Practices](#tips--best-practices)
+- [Jupyter Notebook – Beginner's Guide](#jupyter-notebook--beginners-guide)
+  - [Table of Contents](#table-of-contents)
+  - [What is Jupyter?](#what-is-jupyter)
+  - [Key Concepts](#key-concepts)
+  - [JupyterLab vs Jupyter Notebook vs VS Code](#jupyterlab-vs-jupyter-notebook-vs-vs-code)
+  - [Cells](#cells)
+    - [Code Cells](#code-cells)
+    - [Markdown Cells](#markdown-cells)
+  - [Essential Keyboard Shortcuts](#essential-keyboard-shortcuts)
+    - [Command Mode](#command-mode)
+    - [Edit Mode](#edit-mode)
+  - [Running Code](#running-code)
+    - [Execution Order Matters](#execution-order-matters)
+    - [Restarting the Kernel](#restarting-the-kernel)
+    - [Run All Cells](#run-all-cells)
+  - [Markdown in Notebooks](#markdown-in-notebooks)
+    - [Basic Formatting](#basic-formatting)
+    - [Code Blocks](#code-blocks)
+    - [Tables](#tables)
+    - [Math (LaTeX)](#math-latex)
+  - [Working with Output](#working-with-output)
+    - [Display Types](#display-types)
+    - [Suppressing Output](#suppressing-output)
+    - [Clearing Output](#clearing-output)
+  - [Magic Commands](#magic-commands)
+  - [Shell Commands](#shell-commands)
+  - [Common Pitfalls](#common-pitfalls)
+    - [1. Out-of-order execution](#1-out-of-order-execution)
+    - [2. Hidden state](#2-hidden-state)
+    - [3. Large outputs](#3-large-outputs)
+    - [4. Not saving](#4-not-saving)
+    - [5. Kernel dies](#5-kernel-dies)
+  - [Tips \& Best Practices](#tips--best-practices)
 
 ---
 
@@ -25,31 +46,31 @@ A quick-reference guide covering everything you need to get productive with Jupy
 
 Jupyter Notebook is an interactive computing environment that lets you combine **live code**, **rich text** (Markdown), **equations** (LaTeX), **visualizations**, and **narrative** in a single document (`.ipynb` files).
 
-The name "Jupyter" comes from **Ju**lia + **Py**thon + **R** — the three original languages it supported. Today it supports many more via *kernels*.
+The name "Jupyter" comes from **Ju**lia + **Py**thon + **R** — the three original languages it supported. Today it supports many more via _kernels_.
 
 ---
 
 ## Key Concepts
 
-| Term | Meaning |
-|------|---------|
-| **Notebook** | A `.ipynb` file containing an ordered list of cells |
-| **Cell** | A single block of code or text — the basic unit of a notebook |
-| **Kernel** | The process that runs your code (e.g., a Python interpreter) |
-| **Output** | The result displayed below a code cell after execution |
+| Term                | Meaning                                                                          |
+| ------------------- | -------------------------------------------------------------------------------- |
+| **Notebook**        | A `.ipynb` file containing an ordered list of cells                              |
+| **Cell**            | A single block of code or text — the basic unit of a notebook                    |
+| **Kernel**          | The process that runs your code (e.g., a Python interpreter)                     |
+| **Output**          | The result displayed below a code cell after execution                           |
 | **Execution order** | Cells can be run in any order; the number next to `In [n]` shows when it was run |
 
 ---
 
 ## JupyterLab vs Jupyter Notebook vs VS Code
 
-| Feature | JupyterLab | Jupyter Notebook (Classic) | VS Code |
-|---------|-----------|---------------------------|---------|
-| Interface | Full IDE-like | Single notebook | Full IDE |
-| File browser | Yes | Limited | Yes |
-| Terminal | Built-in | No | Built-in |
-| Extensions | JupyterLab extensions | Limited | VS Code extensions |
-| Launch command | `jupyter lab` | `jupyter notebook` | Open `.ipynb` file |
+| Feature        | JupyterLab            | Jupyter Notebook (Classic) | VS Code            |
+| -------------- | --------------------- | -------------------------- | ------------------ |
+| Interface      | Full IDE-like         | Single notebook            | Full IDE           |
+| File browser   | Yes                   | Limited                    | Yes                |
+| Terminal       | Built-in              | No                         | Built-in           |
+| Extensions     | JupyterLab extensions | Limited                    | VS Code extensions |
+| Launch command | `jupyter lab`         | `jupyter notebook`         | Open `.ipynb` file |
 
 All three work with the same `.ipynb` file format. Use whichever you prefer.
 
@@ -73,7 +94,7 @@ Notebooks have two main cell types:
 ### Markdown Cells
 
 - Contain formatted text using Markdown syntax.
-- Support **bold**, *italic*, `code`, lists, tables, images, links, and LaTeX math.
+- Support **bold**, _italic_, `code`, lists, tables, images, links, and LaTeX math.
 - "Run" a Markdown cell to render it.
 
 ---
@@ -87,29 +108,29 @@ Jupyter has two modes:
 
 ### Command Mode
 
-| Shortcut | Action |
-|----------|--------|
-| `Enter` | Switch to edit mode |
-| `A` | Insert cell **above** |
-| `B` | Insert cell **below** |
-| `DD` | **Delete** current cell |
-| `M` | Change cell to **Markdown** |
-| `Y` | Change cell to **Code** |
-| `↑` / `↓` | Move between cells |
-| `Shift+Enter` | Run cell & move to next |
-| `Z` | Undo cell deletion |
-| `Shift+M` | Merge selected cells |
+| Shortcut      | Action                      |
+| ------------- | --------------------------- |
+| `Enter`       | Switch to edit mode         |
+| `A`           | Insert cell **above**       |
+| `B`           | Insert cell **below**       |
+| `DD`          | **Delete** current cell     |
+| `M`           | Change cell to **Markdown** |
+| `Y`           | Change cell to **Code**     |
+| `↑` / `↓`     | Move between cells          |
+| `Shift+Enter` | Run cell & move to next     |
+| `Z`           | Undo cell deletion          |
+| `Shift+M`     | Merge selected cells        |
 
 ### Edit Mode
 
-| Shortcut | Action |
-|----------|--------|
-| `Esc` | Switch to command mode |
+| Shortcut      | Action                  |
+| ------------- | ----------------------- |
+| `Esc`         | Switch to command mode  |
 | `Shift+Enter` | Run cell & move to next |
-| `Ctrl+Enter` | Run cell (stay in cell) |
-| `Alt+Enter` | Run cell & insert below |
-| `Tab` | Code completion |
-| `Shift+Tab` | Show tooltip/docstring |
+| `Ctrl+Enter`  | Run cell (stay in cell) |
+| `Alt+Enter`   | Run cell & insert below |
+| `Tab`         | Code completion         |
+| `Shift+Tab`   | Show tooltip/docstring  |
 
 > **VS Code note:** Shortcuts differ slightly in VS Code. `Ctrl+Enter` runs the current cell, `Shift+Enter` runs and advances. Use the Command Palette (`Cmd+Shift+P`) and search "Notebook" to see all commands.
 
@@ -154,11 +175,13 @@ To run the entire notebook top-to-bottom:
 
 ```markdown
 # Heading 1
+
 ## Heading 2
+
 ### Heading 3
 
 **bold text**
-*italic text*
+_italic text_
 `inline code`
 
 - bullet list
@@ -185,7 +208,7 @@ def hello():
 
 ```markdown
 | Column A | Column B |
-|----------|----------|
+| -------- | -------- |
 | value 1  | value 2  |
 ```
 
@@ -195,6 +218,7 @@ def hello():
 Inline: $E = mc^2$
 
 Block:
+
 $$
 \sum_{i=1}^{n} x_i = x_1 + x_2 + \ldots + x_n
 $$
@@ -208,13 +232,13 @@ $$
 
 Jupyter can render many output types:
 
-| Type | How |
-|------|-----|
-| Text | `print()` or last expression |
-| HTML | `from IPython.display import HTML` |
-| Images | `from IPython.display import Image` |
+| Type       | How                                                             |
+| ---------- | --------------------------------------------------------------- |
+| Text       | `print()` or last expression                                    |
+| HTML       | `from IPython.display import HTML`                              |
+| Images     | `from IPython.display import Image`                             |
 | DataFrames | Just type the variable name (pandas auto-renders as HTML table) |
-| Plots | matplotlib / plotly / seaborn render inline |
+| Plots      | matplotlib / plotly / seaborn render inline                     |
 
 ### Suppressing Output
 
@@ -235,19 +259,19 @@ x = 42;  # Nothing displayed
 
 Magic commands are special Jupyter commands prefixed with `%` (line) or `%%` (cell).
 
-| Command | Description |
-|---------|-------------|
-| `%timeit x = 1+1` | Time a single statement (runs many times) |
-| `%%timeit` | Time an entire cell |
-| `%time` | Time a single run |
-| `%who` | List all variables |
-| `%whos` | List variables with details |
-| `%reset` | Clear all variables |
-| `%matplotlib inline` | Show matplotlib plots inline |
-| `%load_ext` | Load a Jupyter extension |
-| `%%writefile file.py` | Write cell contents to a file |
-| `%run script.py` | Run an external Python script |
-| `%history` | Show command history |
+| Command               | Description                               |
+| --------------------- | ----------------------------------------- |
+| `%timeit x = 1+1`     | Time a single statement (runs many times) |
+| `%%timeit`            | Time an entire cell                       |
+| `%time`               | Time a single run                         |
+| `%who`                | List all variables                        |
+| `%whos`               | List variables with details               |
+| `%reset`              | Clear all variables                       |
+| `%matplotlib inline`  | Show matplotlib plots inline              |
+| `%load_ext`           | Load a Jupyter extension                  |
+| `%%writefile file.py` | Write cell contents to a file             |
+| `%run script.py`      | Run an external Python script             |
+| `%history`            | Show command history                      |
 
 ---
 
@@ -273,18 +297,23 @@ print(files)
 ## Common Pitfalls
 
 ### 1. Out-of-order execution
+
 Running cells in a non-linear order leads to confusing state. If something feels wrong, **Restart & Run All**.
 
 ### 2. Hidden state
+
 Variables persist even after you delete the cell that created them. Restart the kernel if you deleted important cells.
 
 ### 3. Large outputs
+
 Printing huge lists or DataFrames can freeze the browser. Use `.head()` for DataFrames and slice large collections.
 
 ### 4. Not saving
+
 Notebooks auto-save, but it's good practice to save manually (`Cmd+S` / `Ctrl+S`) before closing.
 
 ### 5. Kernel dies
+
 If the kernel crashes (often from memory issues), restart it. Reduce data size or free memory if it keeps happening.
 
 ---

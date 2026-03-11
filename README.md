@@ -49,9 +49,9 @@ This opens JupyterLab in your browser. Navigate to `notebooks/jupyter_tutorial.i
 
 ## Resources
 
-| Resource | Description |
-|----------|-------------|
-| [JUPYTER_GUIDE.md](JUPYTER_GUIDE.md) | Quick-reference guide covering Jupyter basics |
-| [notebooks/jupyter_tutorial.ipynb](notebooks/jupyter_tutorial.ipynb) | Hands-on interactive tutorial notebook |
-| [Jupyter Documentation](https://jupyter.org/documentation) | Official Jupyter docs |
-| [Python Tutorial](https://docs.python.org/3/tutorial/) | Official Python tutorial |
+| Resource                                                             | Description                                   |
+| -------------------------------------------------------------------- | --------------------------------------------- |
+| [JUPYTER_GUIDE.md](JUPYTER_GUIDE.md)                                 | Quick-reference guide covering Jupyter basics |
+| [notebooks/jupyter_tutorial.ipynb](notebooks/jupyter_tutorial.ipynb) | Hands-on interactive tutorial notebook        |
+| [Jupyter Documentation](https://jupyter.org/documentation)           | Official Jupyter docs                         |
+| [Python Tutorial](https://docs.python.org/3/tutorial/)               | Official Python tutorial                      |
